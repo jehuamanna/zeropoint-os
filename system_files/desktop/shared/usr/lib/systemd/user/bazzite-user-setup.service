@@ -1,0 +1,9 @@
+[Unit]
+Description=Configure zeropoint for current user
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/zeropoint-user-setup
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Enables zeropoint autologin
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/zeropoint-autologin
+
+[Install]
+WantedBy=multi-user.target

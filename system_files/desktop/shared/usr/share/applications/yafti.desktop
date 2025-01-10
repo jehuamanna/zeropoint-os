@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=zeropoint Portal
+Comment=First-run utility for configuring helpful additions to zeropoint
+Icon=/usr/share/ublue-os/zeropoint/portal.svg
+Categories=Utility;
+Exec=/usr/bin/yafti --force

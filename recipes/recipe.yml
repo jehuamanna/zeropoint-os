@@ -6,7 +6,7 @@ name: zeropoint-os
 description: Operating system with energy, speed, and gaming precision.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite
+base-image: quay.io/fedora-ostree-desktops/kinoite
 image-version: 41 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -14,8 +14,17 @@ image-version: 41 # latest is also supported if you want new updates ASAP
 modules:
   - type: files
     files:
-      - source: system
+      - source: system_files/overrides
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+  - type: files
+    files:
+      - source: system_files/deck/shared system_files/deck/kinoite
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+  - type: files
+    files:
+      - source: system_files/nvidia/shared system_files/nvidia/kinoite
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
 
   - type: rpm-ostree
     repos:
@@ -40,3 +49,4 @@ modules:
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
+  - from-file: modules.yml
