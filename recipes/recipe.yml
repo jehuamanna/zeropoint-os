@@ -14,15 +14,15 @@ image-version: 41 # latest is also supported if you want new updates ASAP
 modules:
   - type: files
     files:
-      - source: system_files/overrides
+      - source: /system_files/overrides
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
   - type: files
     files:
-      - source: system_files/deck/shared system_files/deck/kinoite
+      - source: /system_files/deck/shared system_files/deck/kinoite
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
   - type: files
     files:
-      - source: system_files/nvidia/shared system_files/nvidia/kinoite
+      - source: /system_files/nvidia/shared system_files/nvidia/kinoite
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
 
